@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 //Material UI Imports
 import { Paper } from '@material-ui/core';
 
@@ -8,12 +8,11 @@ import AccountPage from '../AccountPage';
 import EditForm from '../EditForm';
 
 const MainBody = () => {
+	const isFormEdit = useSelector((state) => state.rForm);
+
 	return (
 		<div>
-			<Paper>
-				<AccountPage></AccountPage>
-				<EditForm></EditForm>
-			</Paper>
+			<Paper>{isFormEdit ? <EditForm /> : <AccountPage />}</Paper>
 		</div>
 	);
 };
