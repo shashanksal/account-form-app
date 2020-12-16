@@ -6,7 +6,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Ma
 
 //Custom Component imports
 import AccountPage from '../AccountPage';
-import EditForm from '../EditForm';
+import EditPage from '../EditPage';
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -23,7 +23,7 @@ const MainBody = () => {
 	return (
 		<div>
 			<Paper className={classes.paper}>
-				{isFormEdit ? <EditForm /> : <AccountPage />}
+				{isFormEdit ? <EditPage /> : <AccountPage />}
 			</Paper>
 		</div>
 	);

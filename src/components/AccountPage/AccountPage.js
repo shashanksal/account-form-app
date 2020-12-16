@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) =>
 		paper: {
 			padding: theme.spacing(2),
 		},
-		titleFont: {
+		lableFont: {
 			fontWeight: 600,
 			fontSize: 14,
 			color: '#05AE95',
@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) =>
 
 const AccountPage = (props) => {
 	const user = useSelector((state) => state.rAccount);
-	console.log(new Date(user.dob).toDateString());
 	const classes = useStyles();
 	return (
 		<div>
@@ -34,7 +33,7 @@ const AccountPage = (props) => {
 						display="block"
 						align="left"
 						color="textPrimary"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						First Name
 					</Typography>
@@ -46,7 +45,7 @@ const AccountPage = (props) => {
 					<Typography
 						display="block"
 						align="left"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						{user.last_name}
 					</Typography>
@@ -61,7 +60,7 @@ const AccountPage = (props) => {
 						display="block"
 						align="left"
 						color="textPrimary"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						Email
 					</Typography>
@@ -76,7 +75,7 @@ const AccountPage = (props) => {
 						display="block"
 						align="left"
 						color="textPrimary"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						Phone
 					</Typography>
@@ -91,7 +90,7 @@ const AccountPage = (props) => {
 						display="block"
 						align="left"
 						color="textPrimary"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						Date of Birth
 					</Typography>
@@ -106,7 +105,7 @@ const AccountPage = (props) => {
 						display="block"
 						align="left"
 						color="textPrimary"
-						className={classes.titleFont}
+						className={classes.lableFont}
 					>
 						Bio
 					</Typography>
