@@ -11,15 +11,12 @@ import {
 import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; //Import for Back Icon
 
-import { storeFormEditState } from '../../actions/formActions';
+import { storeFormEditState } from '../../actions/formActions'; //Redux Actions
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
 		root: {
 			flexGrow: 1,
-		},
-		menuButton: {
-			marginRight: theme.spacing(2),
 		},
 		title: {
 			flexGrow: 1,
@@ -29,6 +26,9 @@ const useStyles = makeStyles((theme) =>
 		},
 		button: {
 			textTransform: 'none',
+		},
+		toolbar: {
+			padding: '0px 8px',
 		},
 	})
 );
@@ -51,11 +51,10 @@ const AppHeader = () => {
 	const classes = useStyles();
 	return (
 		<AppBar position="static" color="transparent" elevation={0}>
-			<Toolbar>
+			<Toolbar className={classes.toolbar}>
 				{isFormEdit ? (
 					<IconButton
 						edge="start"
-						className={classes.menuButton}
 						color="inherit"
 						aria-label="menu"
 						onClick={handleBackBtnClick}

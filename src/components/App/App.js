@@ -12,14 +12,14 @@ const App = () => {
 	return (
 		<React.Fragment>
 			<Grid container spacing={3}>
-				<Grid item md={4}></Grid>
-				<Grid item md={4}>
+				{/* <Grid item md={5}></Grid> */}
+				<Grid item md={3}>
 					<div className="App">
 						<AppHeader></AppHeader>
 						<MainBody></MainBody>
 					</div>
 				</Grid>
-				<Grid item md={4}></Grid>
+				<Grid item md={9}></Grid>
 			</Grid>
 		</React.Fragment>
 	);
