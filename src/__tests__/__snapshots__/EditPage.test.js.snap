@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Edit page Edit page matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <form
+      class="makeStyles-form-1"
+      novalidate=""
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            First Name
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                id="fName"
+                type="text"
+                value="Bruce"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            Last Name
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                id="lName"
+                type="text"
+                value="Banner"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            Email
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                id="email"
+                type="text"
+                value="bruce.banner@marvel.com"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            Phone
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                id="phone"
+                type="text"
+                value="0400000000"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            Date of Birth
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                id="date"
+                type="date"
+                value="5/31/1970"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+        >
+          <p
+            class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+            style="color: rgb(5, 174, 149);"
+          >
+            Date of Birth
+          </p>
+          <textarea
+            class="makeStyles-textArea-5"
+            id="bio"
+            rows="3"
+            style="height: -4px; overflow: hidden;"
+          >
+            Dr. Bruce Banner is a character in the Marvel Cinematic Universe (MCU) film franchise initially portrayed by Edward Norton and subsequently by Mark Ruffalo—based on the Marvel Comics character of the same name—known commonly by his alter ego, the Hulk. In the films, Banner is a renowned physicist who subjected himself to a gamma radiation experiment designed to replicate a World War II-era "super soldier" program.
+          </textarea>
+          <textarea
+            aria-hidden="true"
+            class="makeStyles-textArea-5"
+            readonly=""
+            style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); width: 100%;"
+            tabindex="-1"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 const AccountPage = (props) => {
-	const user = useSelector((state) => state.rAccount);
+	const user = useSelector((state) => state?.rAccount);
 	const classes = useStyles();
 	return (
 		<div>
@@ -38,7 +38,7 @@ const AccountPage = (props) => {
 						First Name
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						{user.first_name}
+						{user?.first_name}
 					</Typography>
 				</Grid>
 				<Grid item sm={6}>
@@ -47,7 +47,7 @@ const AccountPage = (props) => {
 						align="left"
 						className={classes.lableFont}
 					>
-						{user.last_name}
+						{user?.last_name}
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
 						Banner
@@ -65,7 +65,7 @@ const AccountPage = (props) => {
 						Email
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						{user.email}
+						{user?.email}
 					</Typography>
 				</Grid>
 			</Grid>
@@ -80,7 +80,7 @@ const AccountPage = (props) => {
 						Phone
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						{user.phone}
+						{user?.phone}
 					</Typography>
 				</Grid>
 			</Grid>
@@ -95,7 +95,7 @@ const AccountPage = (props) => {
 						Date of Birth
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						{dateConvert(user.dob)}
+						{dateConvert(user?.dob)}
 					</Typography>
 				</Grid>
 			</Grid>
@@ -110,7 +110,7 @@ const AccountPage = (props) => {
 						Bio
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						{user.bio}
+						{user?.bio}
 					</Typography>
 				</Grid>
 			</Grid>

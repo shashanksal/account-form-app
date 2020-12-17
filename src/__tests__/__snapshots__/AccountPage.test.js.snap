@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test AccountPage AccountPage matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+        >
+          First Name
+        </p>
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-alignLeft MuiTypography-displayBlock"
+        />
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        >
+          Banner
+        </p>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+        >
+          Email
+        </p>
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+        >
+          Phone
+        </p>
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+        >
+          Date of Birth
+        </p>
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
+      >
+        <p
+          class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-colorTextPrimary MuiTypography-alignLeft MuiTypography-displayBlock"
+        >
+          Bio
+        </p>
+        <p
+          class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

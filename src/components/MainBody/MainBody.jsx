@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) =>
 
 const MainBody = () => {
 	const isFormEdit = useSelector((state) => state.rForm);
-
+	console.log("Form ===", isFormEdit);
 	const classes = useStyles();
 	return (
 		<div>

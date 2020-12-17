@@ -3,7 +3,7 @@
  * @param {Date} date Date to be converted
  */
 export const dateConvert = (date) => {
-	return date.toLocaleDateString('en-GB', {
+	return date?.toLocaleDateString('en-GB', {
 		day: '2-digit',
 		month: 'short',
 		year: 'numeric',
