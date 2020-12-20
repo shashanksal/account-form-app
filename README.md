@@ -18,7 +18,7 @@ Installation:
 
 To Run Test Suite:
 
-`npm test`
+`npm run test`
 
 To Start Server:
 
