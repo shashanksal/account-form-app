@@ -108,3 +108,4 @@ At the end of the day, the technologies implemented in this project are React, R
 ## TODOs
 
 - In the next iteration I plan on imporving the validation handling by using some library instead of manual handling.
+- Better way to handle Tab Focusout event

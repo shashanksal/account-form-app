@@ -11,6 +11,9 @@ import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Ma
 
 import { validateEmail, validateAUNumber } from '../../utils/helper';
 
+import useUnload from '../../utils/unload';
+
+//Actions for storing Temp form data
 import {
 	storeTempLData,
 	storeTempFData,
@@ -20,6 +23,7 @@ import {
 	storeTempPhone
 } from '../../actions/formActions';
 
+//Actions for Error Handling
 import{
 	storeLDataErrorFlag,
 	storeFDataErrorFlag,
@@ -70,6 +74,12 @@ const EditPage = (props) => {
 	const phoneFontColor = phoneError ? errorColor : primaryColor;
 	const dobFontColor = dobError ? errorColor : primaryColor;
 	const bioFontColor = bioError ? errorColor : primaryColor;
+
+	useUnload(e => {
+		//TODO -> Better way to handle Tab focusout event
+		e.preventDefault();
+		e.returnValue = '';
+	  });
 
 	const handleFNameChange = (event) => {
 		let value = event.target.value;
