@@ -47,10 +47,10 @@ const AccountPage = (props) => {
 						align="left"
 						className={classes.lableFont}
 					>
-						{user?.last_name}
+						Last Name
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>
-						Banner
+						{user?.last_name}
 					</Typography>
 				</Grid>
 			</Grid>

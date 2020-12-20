@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch } from 'react-redux';
 //Material UI imports
 import {
 	Grid,
@@ -10,6 +10,27 @@ import {
 import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
 
 import { validateEmail, validateAUNumber } from '../../utils/helper';
+
+import {
+	storeTempLData,
+	storeTempFData,
+	storeTempBio,
+	storeTempEmail,
+	storeTempDob,
+	storeTempPhone
+} from '../../actions/formActions';
+
+import{
+	storeLDataErrorFlag,
+	storeFDataErrorFlag,
+	storeBioErrorFlag,
+	storeEmailErrorFlag,
+	storeDobErrorFlag,
+	storePhoneErrorFlag
+} from '../../actions/errorHandlerActions';
+
+const errorColor = "#F44335";
+const primaryColor = "#05AE95";
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -31,68 +52,89 @@ const useStyles = makeStyles((theme) =>
 );
 
 const EditPage = (props) => {
-	const [fNameError, setFNameError] = React.useState(false);
-	const [lNameError, setLNameError] = React.useState(false);
-	const [emailError, setEmailError] = React.useState(false);
-	const [phoneError, setPhoneError] = React.useState(false);
-	const [dobError, setDobError] = React.useState(false);
-	const [bioError, setBioError] = React.useState(false);
+	const dispatch = useDispatch();
+
+	// State for handling Errors
+	let fNameError = useSelector((state) => state.rErrorHandler.fNameFlag);
+	let lNameError = useSelector((state) => state.rErrorHandler.lNameFlag);
+	let emailError = useSelector((state) => state.rErrorHandler.emailFlag);
+	let phoneError = useSelector((state) => state.rErrorHandler.phoneFlag);
+	let dobError = useSelector((state) => state.rErrorHandler.dobFlag);
+	let bioError = useSelector((state) => state.rErrorHandler.bioFlag);
 
 	const user = useSelector((state) => state.rAccount);
 
-	const fNameFontColor = fNameError ? '#F44335' : '#05AE95';
-	const lNameFontColor = lNameError ? '#F44335' : '#05AE95';
-	const emailFontColor = emailError ? '#F44335' : '#05AE95';
-	const phoneFontColor = phoneError ? '#F44335' : '#05AE95';
-	const dobFontColor = dobError ? '#F44335' : '#05AE95';
-	const bioFontColor = bioError ? '#F44335' : '#05AE95';
+	const fNameFontColor = fNameError ?  errorColor: primaryColor;
+	const lNameFontColor = lNameError ? errorColor : primaryColor;
+	const emailFontColor = emailError ? errorColor : primaryColor;
+	const phoneFontColor = phoneError ? errorColor : primaryColor;
+	const dobFontColor = dobError ? errorColor : primaryColor;
+	const bioFontColor = bioError ? errorColor : primaryColor;
 
-	const validateFName = (event) => {
+	const handleFNameChange = (event) => {
 		let value = event.target.value;
 		if (!value && !fNameError) {
-			setFNameError(true);
-		} else setFNameError(false);
+			dispatch(storeFDataErrorFlag(true))
+		} else {
+			dispatch(storeFDataErrorFlag(false))
+			dispatch(storeTempFData(value))
+		};
 	};
 
-	const validateLName = (event) => {
+	const handleLNameChange = (event) => {
 		let value = event.target.value;
 		if (!value && !lNameError) {
-			setLNameError(true);
-		} else setLNameError(false);
+			dispatch(storeLDataErrorFlag(true))
+		} else {
+			dispatch(storeLDataErrorFlag(false))
+			dispatch(storeTempLData(value))
+		};
 	};
 
-	const validateEmailAddress = (event) => {
+	const handleEmailAddressChange = (event) => {
 		let value = event.target.value;
 		if ((!value && !emailError) || !validateEmail(value)) {
-			setEmailError(true);
-		} else setEmailError(false);
+			dispatch(storeEmailErrorFlag(true))
+		} else {
+			dispatch(storeEmailErrorFlag(false))
+			dispatch(storeTempEmail(value))
+		};
 	};
 
-	const validatePhoneNumber = (event) => {
+	const handlePhoneNumberChange = (event) => {
 		let value = event.target.value;
 		if ((!value && !phoneError) || !validateAUNumber(value)) {
-			setPhoneError(true);
-		} else setPhoneError(false);
+			dispatch(storePhoneErrorFlag(true))
+		} else {
+			dispatch(storePhoneErrorFlag(false))
+			dispatch(storeTempPhone(value))
+		};
 	};
 
-	const validateDate = (event) => {
+	const handleDateChange = (event) => {
 		let value = event.target.value;
 		if (!value && !dobError) {
-			setDobError(true);
-		} else setDobError(false);
+			dispatch(storeDobErrorFlag(true))
+		} else {
+			dispatch(storeDobErrorFlag(false))
+			dispatch(storeTempDob(value))
+		};
 	};
 
-	const validateBio = (event) => {
+	const handleBioChange = (event) => {
 		let value = event.target.value;
 		if (!value && !bioError) {
-			setBioError(true);
-		} else setBioError(false);
+			dispatch(storeBioErrorFlag(true))
+		} else {
+			dispatch(storeBioErrorFlag(false))
+			dispatch(storeTempBio(value))
+		};
 	};
 
 	const classes = useStyles();
 	return (
 		<div>
-			<form className={classes.form} noValidate>
+			<form className={classes.form} noValidate id='accountForm'>
 				{/* First Name */}
 				<TextFieldComponent
 					fontColor={fNameFontColor}
@@ -100,9 +142,9 @@ const EditPage = (props) => {
 					title="First Name"
 					error={fNameError}
 					defaultValue={user.first_name}
-					onChange={validateFName}
+					onChange={handleFNameChange}
 					rightHelperText={classes.rightHelperText}
-					helperText="Your first name is required"
+					helpertext="Your first name is required"
 					id="fName"
 				/>
 
@@ -113,9 +155,9 @@ const EditPage = (props) => {
 					title="Last Name"
 					error={lNameError}
 					defaultValue={user.last_name}
-					onChange={validateLName}
+					onChange={handleLNameChange}
 					rightHelperText={classes.rightHelperText}
-					helperText="Your last name is required"
+					helpertext="Your last name is required"
 					id="lName"
 				/>
 
@@ -126,9 +168,9 @@ const EditPage = (props) => {
 					title="Email"
 					error={emailError}
 					defaultValue={user.email}
-					onChange={validateEmailAddress}
+					onChange={handleEmailAddressChange}
 					rightHelperText={classes.rightHelperText}
-					helperText="Your email is not valid email"
+					helpertext="Your email is not valid email"
 					id="email"
 				/>
 
@@ -139,9 +181,9 @@ const EditPage = (props) => {
 					title="Phone"
 					error={phoneError}
 					defaultValue={user.phone}
-					onChange={validatePhoneNumber}
+					onChange={handlePhoneNumberChange}
 					rightHelperText={classes.rightHelperText}
-					helperText="Your phone number is not a valid number"
+					helpertext="Your phone number is not a valid number"
 					id="phone"
 				/>
 
@@ -160,7 +202,7 @@ const EditPage = (props) => {
 						<TextField
 							fullWidth
 							id="date"
-							onChange={validateDate}
+							onChange={handleDateChange}
 							type="date"
 							defaultValue={new Date(user.dob).toLocaleDateString(
 								'en-CA'
@@ -191,8 +233,8 @@ const EditPage = (props) => {
 							defaultValue={user.bio}
 							id="bio"
 							className={classes.textArea}
-							onChange={validateBio}
-							helperText={
+							onChange={handleBioChange}
+							helpertext={
 								bioError ? (
 									<Typography
 										variant="caption"
@@ -238,7 +280,7 @@ const TextFieldComponent = (props) => {
 								className={props.rightHelperText}
 								display="block"
 							>
-								{props.helperText}
+								{props.helpertext}
 							</Typography>
 						) : null
 					}
