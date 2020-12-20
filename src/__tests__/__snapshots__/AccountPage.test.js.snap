@@ -23,12 +23,12 @@ exports[`test AccountPage AccountPage matches snapshot 1`] = `
       >
         <p
           class="MuiTypography-root makeStyles-lableFont-2 MuiTypography-body1 MuiTypography-alignLeft MuiTypography-displayBlock"
-        />
+        >
+          Last Name
+        </p>
         <p
           class="MuiTypography-root makeStyles-bodyFont-3 MuiTypography-body1 MuiTypography-alignLeft"
-        >
-          Banner
-        </p>
+        />
       </div>
     </div>
     <div

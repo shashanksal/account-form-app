@@ -55,12 +55,12 @@ const EditPage = (props) => {
 	const dispatch = useDispatch();
 
 	// State for handling Errors
-	let fNameError = useSelector((state) => state.rErrorHandler.fNameFlag);
-	let lNameError = useSelector((state) => state.rErrorHandler.lNameFlag);
-	let emailError = useSelector((state) => state.rErrorHandler.emailFlag);
-	let phoneError = useSelector((state) => state.rErrorHandler.phoneFlag);
-	let dobError = useSelector((state) => state.rErrorHandler.dobFlag);
-	let bioError = useSelector((state) => state.rErrorHandler.bioFlag);
+	let fNameError = useSelector((state) => state?.rErrorHandler?.fNameFlag);
+	let lNameError = useSelector((state) => state?.rErrorHandler?.lNameFlag);
+	let emailError = useSelector((state) => state?.rErrorHandler?.emailFlag);
+	let phoneError = useSelector((state) => state?.rErrorHandler?.phoneFlag);
+	let dobError = useSelector((state) => state?.rErrorHandler?.dobFlag);
+	let bioError = useSelector((state) => state?.rErrorHandler?.bioFlag);
 
 	const user = useSelector((state) => state.rAccount);
 
@@ -134,7 +134,7 @@ const EditPage = (props) => {
 	const classes = useStyles();
 	return (
 		<div>
-			<form className={classes.form} noValidate id='accountForm'>
+			<form className={classes.form} noValidate>
 				{/* First Name */}
 				<TextFieldComponent
 					fontColor={fNameFontColor}

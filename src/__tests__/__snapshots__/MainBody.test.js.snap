@@ -27,12 +27,12 @@ exports[`test Mainbody Main body matches snapshot 1`] = `
           >
             <p
               class="MuiTypography-root makeStyles-lableFont-3 MuiTypography-body1 MuiTypography-alignLeft MuiTypography-displayBlock"
-            />
+            >
+              Last Name
+            </p>
             <p
               class="MuiTypography-root makeStyles-bodyFont-4 MuiTypography-body1 MuiTypography-alignLeft"
-            >
-              Banner
-            </p>
+            />
           </div>
         </div>
         <div
