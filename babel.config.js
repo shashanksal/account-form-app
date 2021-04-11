@@ -1,10 +1,6 @@
 module.exports = function (api) {
-	const presets = [
-		'@babel/preset-env',
-		'@babel/preset-react',
-		'@babel/preset-flow',
-	];
-	const plugins = ['@babel/plugin-transform-runtime'];
+	const presets = ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"];
+	const plugins = ["@babel/plugin-transform-runtime"];
 
 	/** this is just for minimal working purposes,
 	 * for testing larger applications it is
@@ -14,6 +10,6 @@ module.exports = function (api) {
 
 	return {
 		presets,
-		plugins,
+		plugins
 	};
 };

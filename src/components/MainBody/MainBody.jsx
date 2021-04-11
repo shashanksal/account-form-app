@@ -8,7 +8,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Ma
 import AccountPage from "../AccountPage";
 import EditPage from "../EditPage";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(theme =>
 	createStyles({
 		paper: {
 			padding: theme.spacing(2)
@@ -17,13 +17,11 @@ const useStyles = makeStyles((theme) =>
 );
 
 const MainBody = () => {
-	const isFormEdit = useSelector((state) => state.rForm);
+	const isFormEdit = useSelector(state => state.rForm);
 	const classes = useStyles();
 	return (
 		<div>
-			<Paper className={classes.paper}>
-				{isFormEdit ? <EditPage /> : <AccountPage />}
-			</Paper>
+			<Paper className={classes.paper}>{isFormEdit ? <EditPage /> : <AccountPage />}</Paper>
 		</div>
 	);
 };

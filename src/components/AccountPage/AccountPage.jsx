@@ -6,7 +6,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Ma
 
 import { dateConvert } from "../../utils/helper";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(theme =>
 	createStyles({
 		paper: {
 			padding: theme.spacing(2)
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) =>
 	})
 );
 
-const AccountPage = (props) => {
-	const user = useSelector((state) => state?.rAccount);
+const AccountPage = props => {
+	const user = useSelector(state => state?.rAccount);
 	const classes = useStyles();
 	return (
 		<div>
@@ -42,11 +42,7 @@ const AccountPage = (props) => {
 					</Typography>
 				</Grid>
 				<Grid item sm={6}>
-					<Typography
-						display="block"
-						align="left"
-						className={classes.lableFont}
-					>
+					<Typography display="block" align="left" className={classes.lableFont}>
 						Last Name
 					</Typography>
 					<Typography align="left" className={classes.bodyFont}>

@@ -1,12 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 //Material UI imports
-import {
-	Grid,
-	Typography,
-	TextField,
-	TextareaAutosize
-} from "@material-ui/core";
+import { Grid, Typography, TextField, TextareaAutosize } from "@material-ui/core";
 import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Material UI styles
 
 import { validateEmail, validateAUNumber } from "../../utils/helper";
@@ -36,7 +31,7 @@ import {
 const errorColor = "#F44335";
 const primaryColor = "#05AE95";
 
-const useStyles = makeStyles((theme) =>
+const useStyles = makeStyles(theme =>
 	createStyles({
 		form: {},
 		lableFont: {
@@ -55,18 +50,18 @@ const useStyles = makeStyles((theme) =>
 	})
 );
 
-const EditPage = (props) => {
+const EditPage = props => {
 	const dispatch = useDispatch();
 
 	// State for handling Errors
-	let fNameError = useSelector((state) => state?.rErrorHandler?.fNameFlag);
-	let lNameError = useSelector((state) => state?.rErrorHandler?.lNameFlag);
-	let emailError = useSelector((state) => state?.rErrorHandler?.emailFlag);
-	let phoneError = useSelector((state) => state?.rErrorHandler?.phoneFlag);
-	let dobError = useSelector((state) => state?.rErrorHandler?.dobFlag);
-	let bioError = useSelector((state) => state?.rErrorHandler?.bioFlag);
+	let fNameError = useSelector(state => state?.rErrorHandler?.fNameFlag);
+	let lNameError = useSelector(state => state?.rErrorHandler?.lNameFlag);
+	let emailError = useSelector(state => state?.rErrorHandler?.emailFlag);
+	let phoneError = useSelector(state => state?.rErrorHandler?.phoneFlag);
+	let dobError = useSelector(state => state?.rErrorHandler?.dobFlag);
+	let bioError = useSelector(state => state?.rErrorHandler?.bioFlag);
 
-	const user = useSelector((state) => state.rAccount);
+	const user = useSelector(state => state.rAccount);
 
 	const fNameFontColor = fNameError ? errorColor : primaryColor;
 	const lNameFontColor = lNameError ? errorColor : primaryColor;
@@ -81,7 +76,7 @@ const EditPage = (props) => {
 		e.returnValue = "";
 	});
 
-	const handleFNameChange = (event) => {
+	const handleFNameChange = event => {
 		let value = event.target.value;
 		if (!value && !fNameError) {
 			dispatch(storeFDataErrorFlag(true));
@@ -89,10 +84,9 @@ const EditPage = (props) => {
 			dispatch(storeFDataErrorFlag(false));
 			dispatch(storeTempFData(value));
 		}
-		;
 	};
 
-	const handleLNameChange = (event) => {
+	const handleLNameChange = event => {
 		let value = event.target.value;
 		if (!value && !lNameError) {
 			dispatch(storeLDataErrorFlag(true));
@@ -100,10 +94,9 @@ const EditPage = (props) => {
 			dispatch(storeLDataErrorFlag(false));
 			dispatch(storeTempLData(value));
 		}
-		;
 	};
 
-	const handleEmailAddressChange = (event) => {
+	const handleEmailAddressChange = event => {
 		let value = event.target.value;
 		if ((!value && !emailError) || !validateEmail(value)) {
 			dispatch(storeEmailErrorFlag(true));
@@ -111,10 +104,9 @@ const EditPage = (props) => {
 			dispatch(storeEmailErrorFlag(false));
 			dispatch(storeTempEmail(value));
 		}
-		;
 	};
 
-	const handlePhoneNumberChange = (event) => {
+	const handlePhoneNumberChange = event => {
 		let value = event.target.value;
 		if ((!value && !phoneError) || !validateAUNumber(value)) {
 			dispatch(storePhoneErrorFlag(true));
@@ -122,10 +114,9 @@ const EditPage = (props) => {
 			dispatch(storePhoneErrorFlag(false));
 			dispatch(storeTempPhone(value));
 		}
-		;
 	};
 
-	const handleDateChange = (event) => {
+	const handleDateChange = event => {
 		let value = event.target.value;
 		if (!value && !dobError) {
 			dispatch(storeDobErrorFlag(true));
@@ -133,10 +124,9 @@ const EditPage = (props) => {
 			dispatch(storeDobErrorFlag(false));
 			dispatch(storeTempDob(value));
 		}
-		;
 	};
 
-	const handleBioChange = (event) => {
+	const handleBioChange = event => {
 		let value = event.target.value;
 		if (!value && !bioError) {
 			dispatch(storeBioErrorFlag(true));
@@ -144,7 +134,6 @@ const EditPage = (props) => {
 			dispatch(storeBioErrorFlag(false));
 			dispatch(storeTempBio(value));
 		}
-		;
 	};
 
 	const classes = useStyles();
@@ -220,9 +209,7 @@ const EditPage = (props) => {
 							id="date"
 							onChange={handleDateChange}
 							type="date"
-							defaultValue={new Date(user.dob).toLocaleDateString(
-								"en-CA"
-							)}
+							defaultValue={new Date(user.dob).toLocaleDateString("en-CA")}
 							className={classes.dateField}
 							InputLabelProps={{
 								shrink: true,
@@ -252,11 +239,7 @@ const EditPage = (props) => {
 							onChange={handleBioChange}
 							helpertext={
 								bioError ? (
-									<Typography
-										variant="caption"
-										className={props.rightHelperText}
-										display="block"
-									>
+									<Typography variant="caption" className={props.rightHelperText} display="block">
 										Please provide a bio
 									</Typography>
 								) : null
@@ -269,7 +252,7 @@ const EditPage = (props) => {
 	);
 };
 
-const TextFieldComponent = (props) => {
+const TextFieldComponent = props => {
 	return (
 		<Grid container spacing={2}>
 			<Grid item sm={12}>
@@ -291,11 +274,7 @@ const TextFieldComponent = (props) => {
 					onChange={props.onChange}
 					helperText={
 						props.error ? (
-							<Typography
-								variant="caption"
-								className={props.rightHelperText}
-								display="block"
-							>
+							<Typography variant="caption" className={props.rightHelperText} display="block">
 								{props.helpertext}
 							</Typography>
 						) : null

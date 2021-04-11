@@ -1,59 +1,59 @@
 {
-  "name": "account-form-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.11.2",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/user-event": "^12.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "redux": "^4.0.5",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js",
-    "test:watch": "jest --watch",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js --coverage",
-    "eject": "react-scripts eject",
-    "lint": "eslint '**/*.js'",
-    "lint:fix": "npm run lint -- --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "eslintIgnore": [
-    "node_modules",
-    "build/*"
-  ],
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-react-jsx": "^7.12.11",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-flow": "^7.12.1",
-    "@babel/preset-react": "^7.12.10",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "jest": "^26.6.0",
-    "react-redux": "^7.2.2",
-    "redux-mock-store": "^1.5.4"
-  }
+	"name": "account-form-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@material-ui/core": "^4.11.2",
+		"@material-ui/icons": "^4.11.2",
+		"@testing-library/user-event": "^12.6.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-scripts": "4.0.1",
+		"redux": "^4.0.5",
+		"web-vitals": "^0.2.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js",
+		"test:watch": "jest --watch",
+		"test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js --coverage",
+		"eject": "react-scripts eject",
+		"lint": "eslint '**/*.js'",
+		"lint:fix": "npm run lint -- --fix"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"eslintIgnore": [
+		"node_modules",
+		"build/*"
+	],
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/plugin-transform-react-jsx": "^7.12.11",
+		"@babel/preset-env": "^7.12.11",
+		"@babel/preset-flow": "^7.12.1",
+		"@babel/preset-react": "^7.12.10",
+		"@testing-library/jest-dom": "^5.11.6",
+		"@testing-library/react": "^11.2.2",
+		"jest": "^26.6.0",
+		"react-redux": "^7.2.2",
+		"redux-mock-store": "^1.5.4"
+	}
 }

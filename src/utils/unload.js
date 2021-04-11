@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-const useUnload = (fn) => {
+const useUnload = fn => {
 	console.log("Here");
 	const cb = useRef(fn); // init with fn, so that type checkers won't assume that current might be undefined
 
