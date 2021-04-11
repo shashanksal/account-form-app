@@ -1,17 +1,17 @@
-import React from 'react';
-import { useSelector , useDispatch } from 'react-redux';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 //Material UI imports
 import {
 	Grid,
 	Typography,
 	TextField,
-	TextareaAutosize,
-} from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
+	TextareaAutosize
+} from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Material UI styles
 
-import { validateEmail, validateAUNumber } from '../../utils/helper';
+import { validateEmail, validateAUNumber } from "../../utils/helper";
 
-import useUnload from '../../utils/unload';
+import useUnload from "../../utils/unload";
 
 //Actions for storing Temp form data
 import {
@@ -21,17 +21,17 @@ import {
 	storeTempEmail,
 	storeTempDob,
 	storeTempPhone
-} from '../../actions/formActions';
+} from "../../actions/formActions";
 
 //Actions for Error Handling
-import{
+import {
 	storeLDataErrorFlag,
 	storeFDataErrorFlag,
 	storeBioErrorFlag,
 	storeEmailErrorFlag,
 	storeDobErrorFlag,
 	storePhoneErrorFlag
-} from '../../actions/errorHandlerActions';
+} from "../../actions/errorHandlerActions";
 
 const errorColor = "#F44335";
 const primaryColor = "#05AE95";
@@ -41,17 +41,17 @@ const useStyles = makeStyles((theme) =>
 		form: {},
 		lableFont: {
 			fontWeight: 600,
-			fontSize: 14,
+			fontSize: 14
 		},
 		bodyFont: {
-			fontSize: 14,
+			fontSize: 14
 		},
 		rightHelperText: {
-			textAlign: 'right',
+			textAlign: "right"
 		},
 		textArea: {
-			width: '100%',
-		},
+			width: "100%"
+		}
 	})
 );
 
@@ -68,7 +68,7 @@ const EditPage = (props) => {
 
 	const user = useSelector((state) => state.rAccount);
 
-	const fNameFontColor = fNameError ?  errorColor: primaryColor;
+	const fNameFontColor = fNameError ? errorColor : primaryColor;
 	const lNameFontColor = lNameError ? errorColor : primaryColor;
 	const emailFontColor = emailError ? errorColor : primaryColor;
 	const phoneFontColor = phoneError ? errorColor : primaryColor;
@@ -78,67 +78,73 @@ const EditPage = (props) => {
 	useUnload(e => {
 		//TODO -> Better way to handle Tab focusout event
 		e.preventDefault();
-		e.returnValue = '';
-	  });
+		e.returnValue = "";
+	});
 
 	const handleFNameChange = (event) => {
 		let value = event.target.value;
 		if (!value && !fNameError) {
-			dispatch(storeFDataErrorFlag(true))
+			dispatch(storeFDataErrorFlag(true));
 		} else {
-			dispatch(storeFDataErrorFlag(false))
-			dispatch(storeTempFData(value))
-		};
+			dispatch(storeFDataErrorFlag(false));
+			dispatch(storeTempFData(value));
+		}
+		;
 	};
 
 	const handleLNameChange = (event) => {
 		let value = event.target.value;
 		if (!value && !lNameError) {
-			dispatch(storeLDataErrorFlag(true))
+			dispatch(storeLDataErrorFlag(true));
 		} else {
-			dispatch(storeLDataErrorFlag(false))
-			dispatch(storeTempLData(value))
-		};
+			dispatch(storeLDataErrorFlag(false));
+			dispatch(storeTempLData(value));
+		}
+		;
 	};
 
 	const handleEmailAddressChange = (event) => {
 		let value = event.target.value;
 		if ((!value && !emailError) || !validateEmail(value)) {
-			dispatch(storeEmailErrorFlag(true))
+			dispatch(storeEmailErrorFlag(true));
 		} else {
-			dispatch(storeEmailErrorFlag(false))
-			dispatch(storeTempEmail(value))
-		};
+			dispatch(storeEmailErrorFlag(false));
+			dispatch(storeTempEmail(value));
+		}
+		;
 	};
 
 	const handlePhoneNumberChange = (event) => {
 		let value = event.target.value;
 		if ((!value && !phoneError) || !validateAUNumber(value)) {
-			dispatch(storePhoneErrorFlag(true))
+			dispatch(storePhoneErrorFlag(true));
 		} else {
-			dispatch(storePhoneErrorFlag(false))
-			dispatch(storeTempPhone(value))
-		};
+			dispatch(storePhoneErrorFlag(false));
+			dispatch(storeTempPhone(value));
+		}
+		;
 	};
 
 	const handleDateChange = (event) => {
 		let value = event.target.value;
 		if (!value && !dobError) {
-			dispatch(storeDobErrorFlag(true))
+			dispatch(storeDobErrorFlag(true));
 		} else {
-			dispatch(storeDobErrorFlag(false))
-			dispatch(storeTempDob(value))
-		};
+			dispatch(storeDobErrorFlag(false));
+			dispatch(storeTempDob(value));
+		}
+		;
 	};
 
 	const handleBioChange = (event) => {
 		let value = event.target.value;
 		if (!value && !bioError) {
-			dispatch(storeBioErrorFlag(true))
+			dispatch(storeBioErrorFlag(true));
 		} else {
-			dispatch(storeBioErrorFlag(false))
-			dispatch(storeTempBio(value))
-		};
+			dispatch(storeBioErrorFlag(false));
+			dispatch(storeTempBio(value));
+		}
+		;
 	};
 
 	const classes = useStyles();
@@ -215,12 +221,12 @@ const EditPage = (props) => {
 							onChange={handleDateChange}
 							type="date"
 							defaultValue={new Date(user.dob).toLocaleDateString(
-								'en-CA'
+								"en-CA"
 							)}
 							className={classes.dateField}
 							InputLabelProps={{
 								shrink: true,
-								required: true,
+								required: true
 							}}
 						/>
 					</Grid>

@@ -1,18 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 //Material UI Imports
-import { Paper } from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
+import { Paper } from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Material UI styles
 
 //Custom Component imports
-import AccountPage from '../AccountPage';
-import EditPage from '../EditPage';
+import AccountPage from "../AccountPage";
+import EditPage from "../EditPage";
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
 		paper: {
-			padding: theme.spacing(2),
-		},
+			padding: theme.spacing(2)
+		}
 	})
 );
 

@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 const useUnload = (fn) => {
-	console.log('Here');
+	console.log("Here");
 	const cb = useRef(fn); // init with fn, so that type checkers won't assume that current might be undefined
 
 	useEffect(() => {
@@ -11,9 +11,9 @@ const useUnload = (fn) => {
 	useEffect(() => {
 		const onUnload = cb.current;
 
-		window.addEventListener('beforeunload', onUnload);
+		window.addEventListener("beforeunload", onUnload);
 
-		return () => window.removeEventListener('beforeunload', onUnload);
+		return () => window.removeEventListener("beforeunload", onUnload);
 	}, []);
 };
 

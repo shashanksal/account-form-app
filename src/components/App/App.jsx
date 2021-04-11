@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { Grid } from '@material-ui/core';
+import { Grid } from "@material-ui/core";
 
 //Custom components Import
-import AppHeader from '../Header';
-import MainBody from '../MainBody';
+import AppHeader from "../Header";
+import MainBody from "../MainBody";
 
-import './App.css';
+import "./App.css";
 
 const App = () => {
 	return (

@@ -1,4 +1,4 @@
-import { TYPE_STORE_FORM_EDIT_MODE } from '../actions/actionTypes';
+import { TYPE_STORE_FORM_EDIT_MODE } from "../actions/actionTypes";
 
 const rFromEditMode = (state = false, action) => {
 	switch (action.type) {

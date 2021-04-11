@@ -4,10 +4,10 @@ import {
 	TYPE_STORE_EMAIL_ERROR_FLAG,
 	TYPE_STORE_DOB_ERROR_FLAG,
 	TYPE_STORE_BIO_ERROR_FLAG,
-	TYPE_STORE_PHONE_ERROR_FLAG,
-} from '../actions/actionTypes';
+	TYPE_STORE_PHONE_ERROR_FLAG
+} from "../actions/actionTypes";
 
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
 const fNameFlag = (state = false, action) => {
 	switch (action.type) {
@@ -69,7 +69,7 @@ const rErrorHandler = combineReducers({
 	emailFlag,
 	phoneFlag,
 	dobFlag,
-	bioFlag,
+	bioFlag
 });
 
 export default rErrorHandler;

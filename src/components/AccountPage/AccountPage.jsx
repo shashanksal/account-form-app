@@ -1,24 +1,24 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { Grid, Typography } from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
+import { Grid, Typography } from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Material UI styles
 
-import { dateConvert } from '../../utils/helper';
+import { dateConvert } from "../../utils/helper";
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
 		paper: {
-			padding: theme.spacing(2),
+			padding: theme.spacing(2)
 		},
 		lableFont: {
 			fontWeight: 600,
 			fontSize: 14,
-			color: '#05AE95',
+			color: "#05AE95"
 		},
 		bodyFont: {
-			fontSize: 14,
-		},
+			fontSize: 14
+		}
 	})
 );
 

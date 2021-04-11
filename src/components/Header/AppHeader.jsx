@@ -1,42 +1,42 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 //Material UI imports
 import {
 	AppBar,
 	Toolbar,
 	IconButton,
 	Typography,
-	Button,
-} from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles'; // Using Material UI styles
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; //Import for Back Icon
+	Button
+} from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles"; // Using Material UI styles
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos"; //Import for Back Icon
 
-import { storeFormEditState , storeAccountData } from '../../actions/formActions'; //Redux Actions
+import { storeFormEditState, storeAccountData } from "../../actions/formActions"; //Redux Actions
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
 		root: {
-			flexGrow: 1,
+			flexGrow: 1
 		},
 		title: {
 			flexGrow: 1,
-			color: '#05AE95',
+			color: "#05AE95",
 			fontSize: 28,
-			fontWeight: 600,
+			fontWeight: 600
 		},
 		button: {
-			textTransform: 'none',
+			textTransform: "none"
 		},
 		toolbar: {
-			padding: '0px 8px',
-		},
+			padding: "0px 8px"
+		}
 	})
 );
 
 const AppHeader = () => {
 	const dispatch = useDispatch();
 	const isFormEdit = useSelector((state) => state?.rForm);
-	const tempFormData = useSelector((state) => state?.rTempFormData)
+	const tempFormData = useSelector((state) => state?.rTempFormData);
 
 	// State for handling Errors
 	let fNameError = useSelector((state) => state?.rErrorHandler?.fNameFlag);
@@ -47,7 +47,7 @@ const AppHeader = () => {
 	let bioError = useSelector((state) => state?.rErrorHandler?.bioFlag);
 
 	const handleButtonClick = () => {
-		if(fNameError || lNameError || emailError || phoneError || dobError || bioError) return;
+		if (fNameError || lNameError || emailError || phoneError || dobError || bioError) return;
 		if (isFormEdit) {
 			dispatch(storeAccountData({
 				first_name: tempFormData?.tempFname,
@@ -55,7 +55,7 @@ const AppHeader = () => {
 				email: tempFormData?.tempEmail,
 				phone: tempFormData?.tempPhone,
 				dob: new Date(tempFormData?.tempDob),
-				bio: tempFormData?.tempBio,
+				bio: tempFormData?.tempBio
 			}));
 		}
 		dispatch(storeFormEditState(!isFormEdit));
@@ -90,7 +90,7 @@ const AppHeader = () => {
 					color="inherit"
 					onClick={handleButtonClick}
 				>
-					{isFormEdit ? 'Save' : 'Edit'}
+					{isFormEdit ? "Save" : "Edit"}
 				</Button>
 			</Toolbar>
 		</AppBar>
