@@ -18,7 +18,9 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js",
     "test:watch": "jest --watch",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "npm run lint -- --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -26,6 +28,10 @@
       "react-app/jest"
     ]
   },
+  "eslintIgnore": [
+    "node_modules",
+    "build/*"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
